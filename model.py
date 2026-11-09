@@ -258,8 +258,13 @@ def apply_linear_projection(x, weight, bias):
         res += bias
     return res
 
-# Step 27 - project_to_query_key_value (not yet solved)
-# TODO: implement
+# Step 27 - project_to_query_key_value
+def project_to_query_key_value(x, w_q, b_q, w_k, b_k, w_v, b_v):
+    # TODO: project x into separate query, key, and value tensors via three linear layers
+    q_x = apply_linear_projection(x, w_q, b_q)
+    k_x = apply_linear_projection(x, w_k, b_k)
+    v_x = apply_linear_projection(x, w_v, b_v)
+    return (q_x, k_x, v_x)
 
 # Step 28 - split_qkv_into_heads (not yet solved)
 # TODO: implement
