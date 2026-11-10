@@ -321,7 +321,7 @@ import torch
 
 def apply_ffn_second_linear(hidden, w2, b2):
     # TODO: project hidden (..., d_ff) back to (..., d_model) via w2 and b2.
-    X = hidden @ w2.T + b2
+    X = hidden @ w2 + b2
     return X
 
 # Step 34 - position_wise_feed_forward_network (not yet solved)
